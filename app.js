@@ -23,6 +23,7 @@ app.post('/register', (req, res) => {
 });
 
 // Endpoint to deregister a service
+
 app.post('/deregister', (req, res) => {
     const { name } = req.body;
     if (!name || !services[name]) {
@@ -42,6 +43,8 @@ app.post('/get-service', (req, res) => {
     }
     res.status(200).send({ success: true, url: url });
 });
+
+
 
 const PORT = process.env.port || 3000;
 app.listen(PORT, () => {
