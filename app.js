@@ -3,7 +3,24 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 
-const services = {};
+
+
+// these are all the default values for the services
+const services = {
+  "Farmer":process.env.Farmer,
+  "locationMs":process.env.locationMs,
+  "sellMs":process.env.sellMs,
+  "leaderboardMs":process.env.leaderboardMs,
+  "productMs":process.env.productMs,
+  "Vendor":process.env.Vendor,
+  "Agent":process.env.Agent,
+  "buyMs":process.env.buyMs,
+  "loanMs":process.env.loanMs,
+  "authentication":process.env.authentication,
+  "Sme":process.env.Sme,
+  "supportMs":process.env.supportMs,
+  "Admin":process.env.Admin
+};
 
 // Endpoint to register a new service
 app.post("/register", (req, res) => {
